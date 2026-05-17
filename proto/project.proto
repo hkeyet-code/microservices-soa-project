@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package project;
+
+service ProjectService {
+
+    rpc GetProjects (
+        Empty
+    ) returns (ProjectList);
+
+}
+
+message Empty {}
+
+message Project {
+
+    int32 id = 1;
+
+    string name = 2;
+
+    string description = 3;
+
+    string status = 4;
+
+}
+
+message ProjectList {
+
+    repeated Project projects = 1;
+
+}

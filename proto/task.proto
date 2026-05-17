@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package task;
+
+service TaskService {
+
+    rpc GetTasks (
+        Empty
+    ) returns (TaskList);
+
+}
+
+message Empty {}
+
+message Task {
+
+    int32 id = 1;
+
+    string title = 2;
+
+    string description = 3;
+
+    string status = 4;
+
+    string deadline = 5;
+
+    int32 assignedTo = 6;
+
+    int32 projectId = 7;
+
+}
+
+message TaskList {
+
+    repeated Task tasks = 1;
+
+}
