@@ -118,3 +118,6 @@ query {
 
 }
 ```
+schema
+queries
+screenshots
