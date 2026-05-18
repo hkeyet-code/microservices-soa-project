@@ -1,73 +1,125 @@
 # REST API Documentation
 
-## User Service
+# REST APIs
 
-### Get All Users
-
-GET /users
-
-Response:
-
-[
-  {
-    "id": 1,
-    "name": "Hadil",
-    "email": "hadil@gmail.com"
-  }
-]
+The platform makes REST endpoint available for every microservice.
 
 ---
 
-### Create User
+# User Service
 
+## Base URL
+
+```text
+http://localhost:5001
+```
+
+---
+
+## Create User
+
+### Endpoint
+
+```http
 POST /users
+```
 
-Body:
+### Request Body
 
+```json
 {
   "name": "Ali",
   "email": "ali@gmail.com"
 }
+```
 
 ---
 
-## Auth Service
+## Get Users
 
-### Login
+### Endpoint
 
-POST /auth/login
-
-Body:
-
-{
-  "email": "hadil@gmail.com",
-  "password": "123456"
-}
+```http
+GET /users
+```
 
 ---
 
-## Project Service
+# Project Service
 
-### Create Project
+## Base URL
 
+```text
+http://localhost:5002
+```
+
+---
+
+## Create Project
+
+### Endpoint
+
+```http
 POST /projects
+```
+
+### Request Body
+
+```json
+{
+  "name": "SOA Platform",
+  "description": "Distributed microservices project",
+  "status": "active"
+}
+```
 
 ---
 
-### Get Projects
+## Get Projects
 
+### Endpoint
+
+```http
 GET /projects
+```
 
 ---
 
-## Task Service
+# Task Service
 
-### Create Task
+## Base URL
 
+```text
+http://localhost:5004
+```
+
+---
+
+## Create Task
+
+### Endpoint
+
+```http
 POST /tasks
+```
+
+### Request Body
+
+```json
+{
+  "title": "Build GraphQL API",
+  "description": "Complete GraphQL implementation",
+  "status": "completed",
+  "projectId": 1
+}
+```
 
 ---
 
-### Update Task
+## Get Tasks
 
-PUT /tasks/:id
+### Endpoint
+
+```http
+GET /tasks
+```
